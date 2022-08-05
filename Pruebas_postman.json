@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "5a357dca-392f-4a6d-b045-cec42a5f879d",
+		"name": "PruebaCovinoc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "blooming-dawn-30875.herokuapp.com/api/user",
+					"host": [
+						"blooming-dawn-30875",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAll Local",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "blooming-dawn-30875.herokuapp.com/api/user",
+					"host": [
+						"blooming-dawn-30875",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"identificacion\":\"TI1565656456\",\n        \"telefono\": \"+573006003262\",\n        \"nombre\":\"Prueba 4 Nombre\",\n        \"apellido\":\"Prueba 4 Apellido\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "blooming-dawn-30875.herokuapp.com/api/user",
+					"host": [
+						"blooming-dawn-30875",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ErrorCreateWithoutId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"telefono\": \"+123333\",\n        \"nombre\":\"Prueba 3 Nombre\",\n        \"apellido\":\"Prueba 3 Apellido\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "blooming-dawn-30875.herokuapp.com/api/user",
+					"host": [
+						"blooming-dawn-30875",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ErrorCreateUserExceedVarcharLength",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"identificacion\": \"+123333asdasdasasd\",\n        \"telefono\": \"+123333asdasdasasd\",\n        \"nombre\":\"Prueba 3 Nombre\",  \n        \"apellido\":\"Prueba 3 Apellido\"\n}\n// telefono 5-15 identificación  0-15, nombre y apellido de 0-100",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "blooming-dawn-30875.herokuapp.com/api/user",
+					"host": [
+						"blooming-dawn-30875",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localRequestCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
