@@ -1,0 +1,56 @@
+<div style="width: 400px; margin: auto;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <br>
+      <br>
+
+      <div class="form-group">
+        <label for="identificacion">Identificación</label>
+        <input
+          type="text"
+          class="form-control"
+          id="identificacion"
+          required
+          [(ngModel)]="user.identificacion"
+          name="identificacion"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Nombres">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="Nombres"
+          required
+          [(ngModel)]="user.nombre"
+          name="nombre"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Apellidos">Apellidos</label>
+        <input
+          class="form-control"
+          id="Apellidos"
+          required
+          [(ngModel)]="user.apellido"
+          name="apellido"
+        />
+      </div>
+      <div class="form-group">
+        <label for="telefono">Telefono</label>
+        <input
+          class="form-control"
+          id="telefono"
+          required
+          [(ngModel)]="user.telefono"
+          name="telefono"
+        />
+      </div>
+      <br>
+      <button (click)="guardarUsuario()" class="btn btn-success">Registrar</button>
+    </div>
+    <div *ngIf="existId">
+      <h4>{{errorMostrar}}</h4>
+    </div>
+  </div>
+</div>
